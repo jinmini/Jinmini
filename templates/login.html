@@ -73,6 +73,9 @@
             <input type="password" name="password" placeholder="비밀번호" required>
             <button type="submit">로그인</button>
         </form>
+
+        {{ render_html | default('') | safe }}
+        
     </div>
 </body>
 </html>

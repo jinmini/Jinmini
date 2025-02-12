@@ -28,14 +28,15 @@
         }
         input[type="text"], input[type="number"] {
             width: 100%;
-            padding: 8px;
-            margin: 5px 0 15px;
+            padding: 10px;
+            margin: 5px -10px 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
         button {
             width: 100%;
             padding: 10px;
+            margin: 5px 0px 10px;
             background: #007bff;
             color: white;
             border: none;
@@ -43,14 +44,14 @@
             cursor: pointer;
         }
         button:hover {
-            background: #0056b3;
+            background: #3584d8;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>학생 성적 입력</h2>
-        <form>
+        <form action="/grade" method="POST">
             <label for="name">학생 이름:</label>
             <input type="text" id="name" name="name" required>
             
@@ -71,6 +72,9 @@
             
             <button type="submit">성적 확인</button>
         </form>
+
+        {{ render_html | default('') | safe }}
+
     </div>
 </body>
 </html>
